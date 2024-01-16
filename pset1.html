@@ -4,8 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Hans Halvorson" />
-  <title>PHI 201 Introductory Logic</title>
+  <title>logic pset1</title>
   <style>
     html {
       line-height: 1.5;
@@ -166,77 +165,69 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">PHI 201 Introductory Logic</h1>
-<p class="author">Hans Halvorson</p>
+<h1 class="title">logic pset1</h1>
 </header>
-<p>Logic is among the oldest and most foundational of the university
-disciplines. The goal is to equip students with most general possible
-framework for sound and rigorous reasoning — one that works regardless
-of topic area (e.g. politics, or chemistry, or English literature, or
-…), and regardless of the specific quirks of your natural language or
-programming language or mathematical system.</p>
-<h1 id="instructors">Instructors</h1>
-<p>Rebecca Mullen, Cosim Sayid (head TA), Lingzhi Shi</p>
-<h1 id="course-format">Course format</h1>
-<ul>
-<li><p>One 80 minute lecture, and one 80 minute “workshop”
-(i.e. precept) each week</p></li>
-<li><p>Problem sets approximately every week (50% of grade)</p></li>
-<li><p>In class midterm exam (15% of grade)</p></li>
-<li><p>In class final exam (30% of grade)</p></li>
-<li><p>Engagement and participation (5% of grade)</p></li>
-</ul>
-<h1 id="sources">Sources</h1>
-<ul>
-<li><p>An electronic copy of the textbook <em>How Logic Works</em> will
-be supplied to students. However, if you want to support all of those
-who contributed to the creation of this content, please consider
-purchasing a copy from Labyrinth or another bookseller.</p></li>
-<li><p>We will post additional notes and problem sets here and/or on
-Canvas.</p></li>
-</ul>
-<h1 id="outline-of-topics">Outline of topics</h1>
-<p>Ever since modern symbolic logic was consolidated (in the mid 1900s),
-the standard format for an introductory logic class has been to learn
-the classical predicate calculus in three steps: propositional logic,
-monadic predicate logic, polyadic predicate logic. We follow this same
-outline, but with a few twists.</p>
+<h1 id="a.">A.</h1>
+<p>Represent the propositional structure of each of the following
+sentences. First identify the atomic component sentences (i.e. sentences
+that do not contain connectives) and abbreviate each with a distinct
+capital letter. We have suggested letters after the sentences. Then
+represent the form of the original sentence using the symbols <span
+class="math inline">∨,∧,¬,→</span> for the connectives “or”, “and”,
+“not”, “if…then…”. Make sure to include parentheses, if necessary to
+disambiguate.</p>
 <ol type="1">
-<li><p>We emphasize reasoning techniques (natural deduction) over
-calculational techniques (truth tables or trees).</p></li>
-<li><p>We teach proofs before truth tables. It’s harder, but makes your
-brain stronger.</p></li>
-<li><p>We incorporate more analysis of arguments in natural language
-(e.g. argument mapping).</p></li>
-<li><p>We illustrate logical concepts, when helpful, by displaying them
-concretely in the general framework of functional programming languages.
-However, this course presupposes no background in programming, nor does
-it presuppose that students are interested in programming.</p></li>
+<li><p>It’s not true that if Ron doesn’t do his homework then Hermione
+will finish it for him. (R,H)</p></li>
+<li><p>Harry will be singed unless he evades the dragon’s fiery breath.
+(S,E)</p></li>
+<li><p>Aristotle was neither a great philosopher nor a great scientist.
+(P,S)</p></li>
+<li><p>Mark will get an A in logic only if he does the homework or
+bribes the professor. (A,H,B)</p></li>
+<li><p>Dumbledore will be killed, and either McGonagall will become head
+of school and Hogwarts will flourish, or else it won’t flourish.
+(D,M,H)</p></li>
+<li><p>Harry and Dumbledore are not both right about the moral status of
+Professor Snape. (H,D)</p></li>
 </ol>
-<h1 id="schedule">Schedule</h1>
-<h2 id="week-1">Week 1</h2>
-<p><a href="pset1.html">pset1</a> due at the end of the week. It covers
-basic concepts, some translation, and some simple proofs.</p>
-<p>Reading: Chapters 1 and 2</p>
-<h2 id="week-2">Week 2</h2>
-<p>Problem set covers more translation and proofs with dependency
-numbers (conditional proof)</p>
-<p>Reading: Chapter 3</p>
-<h2 id="week-3">Week 3</h2>
-<p>Problem set covers more proofs and some truth-table problems</p>
-<p>Reading: Chapter 5</p>
-<h2 id="week-5">Week 5</h2>
-<p>Problem set covers proofs with substitution, cut, and replacement</p>
-<p>Reading: Chapter 4</p>
-<h2 id="week-6">Week 6</h2>
-<p>Midterm exam</p>
-<h2 id="week-7">Week 7</h2>
-<p>Problem set covers translation and proofs with UE and EI</p>
-<h2 id="week-8">Week 8</h2>
-<p>Problem set covers proofs with UI and EE</p>
-<h2 id="week-9">Week 9</h2>
-<h2 id="week-10">Week 10</h2>
-<h2 id="week-11">Week 11</h2>
-<h2 id="week-12">Week 12</h2>
+<h1 id="b.">B.</h1>
+<p>Prove that the following argument forms are valid. The premises are
+to the left of the <span class="math inline">⊢</span> symbol, the
+conclusion is to the right. You should number the lines of your proof,
+and each line must either be a premise (i.e. an assumption) or be
+justified by one of the following rules of inference: <span
+class="math inline">∧</span>I, <span class="math inline">∧</span>E,
+<span class="math inline">∨</span>I, MP, MT, or DN.</p>
+<ol type="1">
+<li><p><span
+class="math inline"><em>P</em> → (<em>Q</em>→<em>R</em>), <em>P</em> → <em>Q</em>, <em>P</em> ⊢ <em>R</em></span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ⊢ (<em>P</em>∨<em>R</em>) ∧ (<em>P</em>∨<em>Q</em>)</span></p></li>
+<li><p><span
+class="math inline"><em>P</em> ⊢ <em>Q</em> ∨ (¬¬<em>P</em>∨<em>R</em>)</span></p></li>
+<li><p><span
+class="math inline">¬¬<em>Q</em> → <em>P</em>, ¬<em>P</em> ⊢ ¬<em>Q</em></span></p></li>
+<li><p><span
+class="math inline"><em>Q</em> → (<em>P</em>→<em>R</em>), ¬<em>R</em> ∧ <em>Q</em> ⊢ ¬<em>P</em></span></p></li>
+</ol>
+<h1 id="c.">C.</h1>
+<p>Explain what is wrong with the following “proof”.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(1)</td>
+<td style="text-align: left;"><span
+class="math inline"><em>P</em> ∨ (<em>Q</em>∧<em>R</em>)</span></td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(2)</td>
+<td style="text-align: left;"><span
+class="math inline"><em>P</em> ∨ <em>Q</em></span></td>
+<td style="text-align: left;">1 <span class="math inline">∧</span>E</td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>
