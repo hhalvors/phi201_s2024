@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>logic pset8</title>
+  <title>logic pset9</title>
   <style>
     html {
       line-height: 1.5;
@@ -165,61 +165,33 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">logic pset8</h1>
+<h1 class="title">logic pset9</h1>
 </header>
 <h1 id="a.">A.</h1>
-<p>Represent the form of the following sentences in predicate logic.
-We’ve suggested appropriate symbols. (For the sentences about people,
-you don’t need to add an extra predicate for “<span
-class="math inline"><em>x</em></span> is a person.”)</p>
+<p>Translate the following intro predicate logic. We have capitalized
+the relevant predicates and relations.</p>
 <ol type="1">
-<li><p>Mary loves everyone who loves her. (<span
-class="math inline"><em>m</em>, <em>L</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Everyone loves their mother. (<span
-class="math inline"><em>L</em><em>x</em><em>y</em>, <em>M</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Snape killed someone. (<span
-class="math inline"><em>K</em><em>x</em><em>y</em>, <em>s</em></span>)</p></li>
-<li><p>Some wizards only marry other wizards. (<span
-class="math inline"><em>W</em><em>x</em>, <em>M</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Anything that is greater or equal than both <span
-class="math inline"><em>a</em></span> and <span
-class="math inline"><em>b</em></span> is also greater or equal than
-<span class="math inline"><em>c</em></span>. (<span
-class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>x</em> ≤ <em>y</em></span>)</p></li>
+<li><p>There is a STUDENT who is RESPECTED by every PROFESSOR who
+RESPECTS him(her)self.</p></li>
+<li><p>There is a PROFESSOR who RESPECTS no STUDENT who doesn’t RESPECT
+every PROFESSOR.</p></li>
+<li><p>Every STUDENT RESPECTS every PROFESSOR who RESPECTS every
+STUDENT.</p></li>
 </ol>
 <h1 id="b.">B.</h1>
-<p>Prove the following sequents using the propositional logic rules,
-plus UE and UI.</p>
+<p>Prove the following sequents using the propositional logic rules plus
+UE,UI,EE,EI.</p>
 <ol type="1">
 <li><p><span
-class="math inline">∀<em>y</em>(<em>P</em>→<em>F</em><em>y</em>) ⊢ <em>P</em> → ∀<em>y</em><em>F</em><em>y</em></span></p></li>
+class="math inline">∃<em>x</em>∀<em>y</em><em>R</em><em>x</em><em>y</em> ⊢ ∀<em>y</em>∃<em>x</em><em>R</em><em>x</em><em>y</em></span></p></li>
 <li><p><span
-class="math inline">∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>G</em><em>y</em>) ⊢ ∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>)</span></p></li>
+class="math inline"><em>P</em> → ∃<em>x</em><em>F</em><em>x</em> ⊢ ∃<em>x</em>(<em>P</em>→<em>F</em><em>x</em>)</span></p></li>
 <li><p><span
-class="math inline">∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>) ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>G</em><em>y</em>)</span></p></li>
+class="math inline">∃<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>F</em><em>y</em>)</span></p></li>
 <li><p><span
-class="math inline">⊢ ∀<em>x</em>(∀<em>y</em><em>R</em><em>x</em><em>y</em>→<em>R</em><em>x</em><em>x</em>)</span></p></li>
-</ol>
-<h1 id="c.">C.</h1>
-<p>Prove the following sequents using the propositional logic rules,
-plus EI, UE, and UI.</p>
-<ol type="1">
+class="math inline">∀<em>x</em>∃<em>y</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>) ⊢ ∃<em>y</em>∀<em>x</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>)</span></p></li>
 <li><p><span
-class="math inline">¬∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>) ⊢ ∀<em>x</em><em>F</em><em>x</em></span></p></li>
-<li><p><span
-class="math inline">¬∀<em>x</em><em>F</em><em>x</em> ⊢ ∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span>
-(Hint: <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span> does
-<em>not</em> follow from the premise.)</p></li>
-<li><p><span
-class="math inline">∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>F</em><em>y</em>) ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>F</em><em>y</em>)</span></p></li>
-<li><p><span
-class="math inline">¬∃<em>x</em><em>F</em><em>x</em> ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span></p></li>
-<li><p><span
-class="math inline">∀<em>x</em><em>F</em><em>x</em> → <em>P</em> ⊢ ∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span>
-(Hint: <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span> does
-<em>not</em> follow from the premise.)</p></li>
+class="math inline">⊢ ∀<em>x</em>∃<em>y</em>(<em>R</em><em>x</em><em>y</em>→∀<em>z</em><em>R</em><em>x</em><em>z</em>)</span></p></li>
 </ol>
 </body>
 </html>
