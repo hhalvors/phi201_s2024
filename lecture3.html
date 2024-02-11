@@ -167,7 +167,8 @@
 <header id="title-block-header">
 <h1 class="title">Lecture 3: Reductio ad Absurdum</h1>
 </header>
-<p>Tentative – sometimes lecture does not exactly follow the notes.</p>
+<p>Tentative – the actual lecture might deviate in some ways from these
+notes.</p>
 <h1 id="demorgans-laws">DeMorgan’s Laws</h1>
 <p>Show <span
 class="math inline">¬(<em>P</em>∨<em>Q</em>) ⊢ ¬<em>P</em></span></p>
@@ -327,10 +328,24 @@ circumstances, then (conjecture) all of the other rules are still
 truth-preserving, but <span class="math inline">∧</span>-elim is
 not.</p>
 <h2 id="without-reductio-ad-absurdum">Without Reductio ad Absurdum</h2>
-<p>We could also do without Reductio ad Absurdum, but it is, in some
-important ways, a more natural rule than Modus Tollens. Logical purists
-do not like MT because it requires the presence of two connectives
-(<span class="math inline">∧</span> and <span
-class="math inline">¬</span>) instead of just one.</p>
+<p>We now show that Reductio ad Absurdum can be reduced to the other
+rules. Suppose that <span
+class="math inline"><em>Γ</em>, <em>P</em> ⊢ <em>Q</em> ∧ ¬<em>Q</em></span>.
+Then <span
+class="math inline"><em>Γ</em> ⊢ <em>P</em> → <em>Q</em></span> and
+<span class="math inline"><em>Γ</em> ⊢ <em>P</em> → ¬<em>Q</em></span>.
+By contraposition <span
+class="math inline"><em>Γ</em> ⊢ ¬<em>Q</em> → ¬<em>P</em></span>, and
+so <span
+class="math inline"><em>Γ</em> ⊢ <em>P</em> → ¬<em>P</em></span>. By a
+previous result, <span
+class="math inline"><em>P</em> → ¬<em>P</em> ⊢ ¬<em>P</em></span>, and
+so <span class="math inline"><em>Γ</em> ⊢ ¬<em>P</em></span>.</p>
+<p>However, RA is, in some important ways, a more natural rule than
+Modus Tollens. Logical purists do not like MT because it requires the
+presence of two connectives (<span class="math inline">∧</span> and
+<span class="math inline">¬</span>) instead of just one. To restore the
+purity and symmetry of our rules, we could take RA to be the intro rule
+for negation, and DN-elimination to be the elim rule for negation.</p>
 </body>
 </html>
