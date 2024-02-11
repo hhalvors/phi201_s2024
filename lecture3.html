@@ -299,27 +299,38 @@ rules. But RA makes the proof more intelligible and more efficient.</p>
 1   (7) (P∨¬P)∧¬(P∨¬P)   6,1 ∧I
     (8) ¬¬(P∨¬P)         1,7 RA
     (9) P∨¬P             8 DN</code></pre>
-<h1 id="modus-tollens-is-eliminable">Modus Tollens is Eliminable</h1>
-<p>We have kept the rules almost to a minimum, but there is one
-redundancy: we don’t actually need MT. That is, anything we prove with
-MT can be proven with the other rules. Here is a way to “simulate” MT
-using RA.</p>
+<h1 id="redundancies-in-our-system">Redundancies in our system</h1>
+<p>We have kept the rules almost to a minimum, but there are few
+different reductions that could be made.</p>
+<h2 id="without-mt-and-dn-intro">Without MT and DN-Intro</h2>
+<p>Now that we have RA, we could actually eliminate MT and DN-Intro.
+He’s a way to “simulate” MT using RA.</p>
 <pre><code>1     (1) P→Q      A
 2     (2) ¬Q       A
 3     (3) P        A
 1,3   (4) Q        1,3 MP
 1,2,3 (5) Q∧¬Q     4,2 ∧I
 1,2   (6) ¬P       3,5 RA</code></pre>
+<p>And here’s a way to simulate DN-Intro:</p>
+<pre><code>1   (1) P      A
+2   (2) ¬P     A
+1,2 (3) P∧¬P   1,2 ∧I
+1   (4) ¬¬P    2,3 RA</code></pre>
+<p>Is it possible to show that that the system without MT and DN-Intro
+is minimal, i.e. that none of the remaining rules can be simulated by
+others. I think that the answer to that question is yes, and I think it
+might be shown by altering the truth tables of the connectives in
+suitable ways. For example, if we altered the truth table of <span
+class="math inline">∧</span> so that <span
+class="math inline"><em>P</em> ∧ <em>Q</em></span> is true in all
+circumstances, then (conjecture) all of the other rules are still
+truth-preserving, but <span class="math inline">∧</span>-elim is
+not.</p>
+<h2 id="without-reductio-ad-absurdum">Without Reductio ad Absurdum</h2>
 <p>We could also do without Reductio ad Absurdum, but it is, in some
 important ways, a more natural rule than Modus Tollens. Logical purists
 do not like MT because it requires the presence of two connectives
 (<span class="math inline">∧</span> and <span
 class="math inline">¬</span>) instead of just one.</p>
-<h1 id="double-negation-intro-is-eliminable">Double Negation Intro is
-Eliminable</h1>
-<pre><code>1   (1) P      A
-2   (2) ¬P     A
-1,2 (3) P∧¬P   1,2 ∧I
-1   (4) ¬¬P    2,3 RA</code></pre>
 </body>
 </html>
