@@ -226,12 +226,10 @@ li code {
 1      (16) ¬p∨¬q               15 DN</code></pre></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mi>P</mi><mo>∧</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg (P\to Q)\:\vdash\: P\wedge \neg Q</annotation></semantics></math></p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>→</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\vdash (P\to Q)\vee (Q\to P)</annotation></semantics></math></p>
-<p>There’s really no short proof (in our system) of this result. My
-preferred solution – from the point of view of conceptual clarity — is
-to prove p∨¬p, then to do negative paradox on the first disjunct and
-positive paradox on the second disjunct. Another reasonable approach is
-to assume the negation of the conclusion (for RAA), and then use
-DeMorgans.</p>
+<p>There’s really no short proof (in our system) of this result, but the
+<em>reason</em> why it holds is clear: either p is true or ¬p is true.
+If p is true, then q→p is true, and hence (q→p)∨(p→q). If ¬p is true,
+then p→q is true, and hence (q→p)∨(p→q).</p>
 <pre><code>1      (1) ¬(p∨¬p)          A
 2      (2) p                A
 2      (3) p∨¬p             2 ∨I
@@ -334,10 +332,11 @@ p→q.)</p></li>
 <ol start="23" type="1">
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>P</mi><mspace width="0.222em"></mspace><mo>⊣</mo><mo>⊢</mo><mspace width="0.222em"></mspace><mi>P</mi></mrow><annotation encoding="application/x-tex">(P\to Q)\to P\:\dashv\vdash \: P</annotation></semantics></math></li>
 </ol>
-<p><strong>Exercise 3.6</strong> Show that intuitionistic logic permits
-reducing three negation signs to one.</p>
-<p><strong>Exercise 3.7</strong> Suppose that we add the rule
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊢</mo><mo>¬</mo><mi>P</mi><mo>∨</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg (P\wedge Q)\vdash \neg P\vee \neg Q</annotation></semantics></math>
-to intuitionistic logic. Show that we get full classical logic.</p>
+<p><strong>Exercise S1.</strong> Show that ¬¬¬p ⊢ ¬p in intuitionistic
+logic. i.e. don’t use DN elimination to prove it.</p>
+<p><strong>Exercise S2.</strong> Suppose that we add the rule ¬(p∧q) ⊢
+¬p∨¬q to intuitionistic logic. Show that we get full classical logic.
+That is, use this new rule to prove excluded middle, or equivalently, DN
+elimination.</p>
 </body>
 </html>
