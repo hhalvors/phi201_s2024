@@ -170,7 +170,7 @@
 code {
   font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
   font-size: 85%;
-  margin: 0;
+  margin: 2px;
   background-color: #f5f5f5; /* Light gray background */
   border: 1px solid #ccc; /* Light gray border */
   padding: 8px; /* Padding around the text for better readability */
@@ -179,22 +179,20 @@ code {
   overflow-x: auto; /* Adds horizontal scrolling if the code overflows */
   max-width: 66.67%; /* Set the maximum width to 2/3 of the parent
   container's width */
-  margin-left: 30px;
+  margin-left: 0;
 }
 </style>
 <p><strong>Exercise 3.4</strong> Prove the following sequents.</p>
 <ol type="1">
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mo>¬</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\to Q\:\vdash\: \neg (P\wedge \neg Q)</annotation></semantics></math></li>
-</ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mo>¬</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\to Q\:\vdash\: \neg (P\wedge \neg Q)</annotation></semantics></math></p>
 <pre><code>1      (1) p→q              A
 2      (2) p∧¬q             A
 2      (3) p                2 ∧E
 1,2    (4) q                1,2 MP
 2      (5) ¬q               2 ∧E
 1,2    (6) q∧¬q             4,5 ∧I
-1      (7) ¬(p∧¬q)          2,6 RA</code></pre>
-<ol start="2" type="1">
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mi>P</mi><mo>∨</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg (P\wedge Q)\:\vdash\: \neg P\vee \neg Q</annotation></semantics></math></li>
+1      (7) ¬(p∧¬q)          2,6 RA</code></pre></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mi>P</mi><mo>∨</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg (P\wedge Q)\:\vdash\: \neg P\vee \neg Q</annotation></semantics></math></p></li>
 </ol>
 <pre><code>1      (1) ¬(p∧q)               A
 2      (2) ¬(¬p∨¬q)             A
@@ -214,19 +212,42 @@ code {
     1      (16) ¬p∨¬q               15 DN</code></pre>
 <ol start="3" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mi>P</mi><mo>∧</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\neg (P\to Q)\:\vdash\: P\wedge \neg Q</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>→</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\vdash (P\to Q)\vee (Q\to P)</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>→</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\vdash (P\to Q)\vee (Q\to P)</annotation></semantics></math></p>
+<p>There’s really no short proof (in our system) of this result. My
+preferred solution – from the point of view of conceptual clarity — is
+to prove p∨¬p, then to do negative paradox on the first disjunct and
+positive paradox on the second disjunct. Another reasonable approach is
+to assume the negation of the conclusion (for RAA), and then use
+DeMorgans.</p>
+<pre><code>1      (1) ¬(p∨¬p)          A
+2      (2) p                A
+2      (3) p∨¬p             2 ∨I
+1,2    (4) (p∨¬p)∧¬(p∨¬p)   3,1 ∧I
+1      (5) ¬p               2,4 RA
+1      (6) p∨¬p             5 ∨I
+1      (7) (p∨¬p)∧¬(p∨¬p)   6,1 ∧I
+       (8) ¬¬(p∨¬p)         1,7 RA
+       (9) p∨¬p             8 DN
+10     (10) q               A
+2      (11) q→p             10,2 CP
+12     (12) ¬p              A
+13     (13) ¬q              A
+2,12   (14) p∧¬p            2,12 ∧I
+2,12   (15) ¬¬q             13,14 RA
+2,12   (16) q               15 DN
+12     (17) p→q             2,16 CP
+2      (18) (p→q)∨(q→p)     11 ∨I
+12     (19) (p→q)∨(q→p)     17 ∨I
+       (20) (p→q)∨(q→p)     9,2,18,12,19 ∨E</code></pre></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>∨</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\to (Q\vee R)\:\vdash\: (P\to Q)\vee (P\to R)</annotation></semantics></math></p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mo>¬</mo><mi>Q</mi><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mi>P</mi><mo>→</mo><mo>¬</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">(P\wedge Q)\to \neg Q\:\vdash\:P\to \neg Q</annotation></semantics></math></p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>∧</mo><mo>¬</mo><mi>Q</mi><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\wedge\neg Q\:\vdash\: \neg (P\to Q)</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\vdash\: ((P\to Q)\to P)\to P</annotation></semantics></math>
-(Hint: One possibility is to first prove
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\vdash\: ((P\to Q)\to P)\to P</annotation></semantics></math></p>
+<p>One possibility is to first prove
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⊢</mo><mi>P</mi><mo>∨</mo><mo>¬</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\vdash P\vee \neg P</annotation></semantics></math>,
-and then argue by cases. The first case is easy if you remember
-“positive paradox”. For the second case, remember “negative paradox”,
-i.e. that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>¬</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\neg P</annotation></semantics></math>
-implies
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P\to Q</annotation></semantics></math>.)</p></li>
+and then argue by cases. The first case is easy if you remember positive
+paradox. For the second case, use negative paradox, i.e. that ¬p implies
+p→q.)</p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>∨</mo><mi>R</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>⊢</mo><mspace width="0.222em"></mspace><mo>¬</mo><mi>R</mi><mo>→</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>¬</mo><mi>Q</mi><mo>→</mo><mo>¬</mo><mi>P</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P\to (Q\vee R)\:\vdash \: \neg R\to (\neg Q\to \neg P)</annotation></semantics></math></p></li>
 </ol>
 <pre><code>1       (1) p→(q∨r)         A
