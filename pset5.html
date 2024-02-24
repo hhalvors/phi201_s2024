@@ -167,44 +167,55 @@
 <header id="title-block-header">
 <h1 class="title">logic pset5</h1>
 </header>
+<p>Final version: Feb 24</p>
+<p>Resources: chapter 4 (“New proofs from old”) of <em>How Logic
+Works</em>.</p>
 <h1 id="proofs-with-meta-rules">Proofs with meta-rules</h1>
+<p>For the following four problems, you may cut in any of the “useful
+validities” from pp 233-4 in the textbook (cite them by name or number),
+or any other sequent for which you include a proof. Please note that
+<span class="math inline">↔︎</span> intro and elim are defined on page 59
+of the textbook.</p>
 <ol type="1">
 <li><p>Prove that <span
 class="math inline">¬(<em>P</em>↔︎<em>Q</em>) ⊢ <em>P</em> → ¬<em>Q</em></span>.
-Besides the basic rules, you may also cut in the following valid
-sequent: <span
+Hint: you can use the following valid sequent: <span
 class="math inline"><em>A</em>, <em>B</em> ⊢ <em>A</em> ↔︎ <em>B</em></span>
 (biconditional).</p></li>
 <li><p>Prove that <span
-class="math inline"><em>P</em> ↔︎ <em>Q</em>, ¬(<em>P</em>∧<em>Q</em>) ⊢ ¬<em>P</em> ∧ ¬<em>Q</em></span>.
-You may only use the basic rules.</p></li>
+class="math inline"><em>P</em> ↔︎ <em>Q</em>, ¬(<em>P</em>∧<em>Q</em>) ⊢ ¬<em>P</em> ∧ ¬<em>Q</em></span>.</p></li>
 <li><p>Prove that <span
 class="math inline"><em>P</em> ↔︎ <em>Q</em> ⊢ (<em>P</em>∧<em>Q</em>) ∨ (¬<em>P</em>∧¬<em>Q</em>)</span>.
-Besides the basic rules, you may cut in sequents already proved in this
-pset and/or the sequent <span
+Hint: use sequents that you already proved in this pset and/or the
+sequent <span
 class="math inline">¬<em>A</em> → <em>B</em> ⊢ <em>A</em> ∨ <em>B</em></span>
 (material conditional).</p></li>
 <li><p>Prove that <span
-class="math inline"> ⊢ (<em>P</em>↔︎<em>Q</em>) ∨ (<em>P</em>↔︎¬<em>Q</em>)</span>.
-You may cut in any of the “useful validities” from pp 233-4 in the
-textbook.</p></li>
+class="math inline"> ⊢ (<em>P</em>↔︎<em>Q</em>) ∨ (<em>P</em>↔︎¬<em>Q</em>)</span>.</p></li>
 </ol>
 <h1 id="relating-proofs-to-truth-tables">Relating proofs to truth
 tables</h1>
 <ol type="1">
-<li><p>Give the most concise argument you can for the claim that there
-is a correctly written proof whose final line has the formula <span
+<li><p>Explain (in a half page or less) how you know that there is a
+correctly written proof whose final line has the formula <span
 class="math inline">(<em>P</em>↔︎<em>Q</em>) ∨ ((<em>Q</em>↔︎<em>R</em>)∨(<em>P</em>↔︎<em>R</em>))</span>
-and no dependency numbers.</p></li>
-<li><p>Consider the following suggested proof rule. Please argue for (or
-against) the claim that this proof rule can be derived from those we
-already have.</p></li>
+and no dependency numbers. A good answer will cite the
+<strong>completeness</strong> of our rules of inference.</p></li>
+<li><p>Please argue for or against the claim that the following proof
+rule can be derived from those we already have. You answer should be
+maximum a half page, and a good answer will likely say something about
+the relationship between proofs and truth tables.</p></li>
 </ol>
 <blockquote>
 <p>From <span
 class="math inline"><em>Γ</em> ⊢ ¬(<em>P</em>∧<em>Q</em>)</span> it is
 permitted to derive <span
-class="math inline"><em>Γ</em> ⊢ ¬<em>P</em></span>.</p>
+class="math inline"><em>Γ</em> ⊢ ¬<em>P</em></span>. In other words, if
+you have <span class="math inline">¬(<em>P</em>∧<em>Q</em>)</span> on a
+line with dependencies <span class="math inline"><em>Γ</em></span>, then
+you may write <span class="math inline">¬<em>P</em></span> on a
+subsequent line, also with dependencies <span
+class="math inline"><em>Γ</em></span>.</p>
 </blockquote>
 </body>
 </html>
