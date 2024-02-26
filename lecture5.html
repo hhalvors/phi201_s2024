@@ -250,6 +250,11 @@ this?</p>
 
 
 1  (n) p→(q∨r)</code></pre>
+<p>Of course the answer to both questions is yes – as can be shown by a
+simple truth-table argument. Note that the only way for (p→q)∨r to be
+false is if p is true and q and r are false, which is also the only way
+for p→(q∨r) to be false. Hence, these two sentences are logically
+equivalent.</p>
 <h2 id="inferring-types-of-sentences">Inferring types of sentences</h2>
 <ol type="1">
 <li><p>Suppose that ϕ and ψ are contingencies. Can we say anything
@@ -264,5 +269,38 @@ anything definitive about the semantic type of ϕ→ψ?</p>
 <p>In fact, when ϕ is a tautology, ϕ→ψ is logically equivalent to ψ. So
 it is a contingency if ψ is.</p></li>
 </ol>
+<hr>
+<p>As Jillian pointed out, the following is provable.</p>
+<p><span
+class="math display">(<em>p</em>∧<em>q</em>) → <em>r</em> ⊢ (<em>p</em>→<em>r</em>) ∨ (<em>q</em>→<em>r</em>)</span></p>
+<p>In fact, the meta-rules <strong>cut</strong> and
+<strong>replacement</strong> can be used to give a fairly simple
+proof.</p>
+<pre><code>1  (1) (p∧q)→r         A
+1  (2) ¬(p∧q)∨r        1 mat.con
+1  (3) (¬p∨¬q)∨r       2 DM
+1  (4) (¬p∨¬q)∨(r∨r)   3 duplication
+1  (5) ¬p∨(¬q∨(r∨r))   4 assoc
+1  (6) ¬p∨((¬q∨r)∨r)   5 assoc
+1  (7) ¬p∨(r∨(¬q∨r))   6 comm
+1  (8) (¬p∨r)∨(¬q∨r)   7 assoc
+1  (9) (p→r)∨(¬q∨r)    8 mat.con
+1  (10) (p→r)∨(q→r)    9 mat.con
+</code></pre>
+<p><strong>Exercise:</strong> distinguish which moves could be ‘cut’ and
+which moves have to be ‘replacement’. (Remember that cut only functions
+on the entire formula on a line.)</p>
+<p><strong>Exercise:</strong> Give another proof of the above result
+using a different strategy. For example, assuming (p∧q)→r, now assume
+the negation of the conclusion and apply DeMorgans to get
+¬(p→r)∧¬(q→r).</p>
+<p>If we <strong>substitute</strong> p∧q for r in the above valid
+sequent, we get the following valid sequent.</p>
+<p><span
+class="math display">(<em>p</em>∧<em>q</em>) → (<em>p</em>∧<em>q</em>) ⊢ (<em>p</em>→(<em>p</em>∧<em>q</em>)) ∨ (<em>q</em>→(<em>p</em>∧<em>q</em>))</span></p>
+<p>Since the premise here is a tautology, it follows that the conclusion
+is also a tautology! But that can also be determined directly: if
+p→(p∧q) is false, then p is true and p∧q is false, which means that q is
+false; but then q→(p∧q) is true.</p>
 </body>
 </html>
