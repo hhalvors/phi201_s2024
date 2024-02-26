@@ -198,16 +198,24 @@ then the argument from Γ to ϕ is valid (in the sense of truth
 tables).</p>
 <p><strong>Completeness</strong> says that if the argument from Γ to ϕ
 is valid then there is a proof of Γ ⊢ ϕ.</p>
+<p>What these results mean in practice is that if the argument from Γ to
+ϕ is not valid, then there cannot be a line like this in a correctly
+written proof:</p>
+<pre><code>Γ  (n) ϕ</code></pre>
+<p>Conversely, if Γ ⊢ ϕ is valid, then there <em>is</em> a correctly
+written proof that ends with the line:</p>
+<pre><code>Γ  (n) ϕ</code></pre>
 <hr>
 <p>Can there be a correctly written proof with line fragments like
 this?</p>
-<p>What is the semantic relationship between the sentences on lines 1,2
-and the sentence on line n?</p>
 <pre><code>1   (1) p∨q       A
 2   (2) p∨¬q      A
 
 
 1,2 (n) p        </code></pre>
+<p>Yes: the sentences on lines 1 and 2 logically imply the sentence on
+line n. By completeness, there is a correctly written proof with these
+line fragments.</p>
 <hr>
 <p>Suppose that we have two (correctly written) proofs as follows. What
 can we say about the semantic relationship between ϕ and ψ ?</p>
@@ -220,24 +228,33 @@ can we say about the semantic relationship between ϕ and ψ ?</p>
 
 
 1  (17) ϕ</code></pre>
+<p>The first proof and soundness show that ϕ logically implies ψ, and
+the second proof and soundness show that ψ logically implies ϕ.
+Therefore, ϕ and ψ are logically equivalent.</p>
 <hr>
 <p>Can there be a correctly written proof with line fragments like
 this?</p>
-<p>What is the semantic type of the formula on line 1? What is the
-semantic type of the formula on line 17?</p>
 <pre><code>1  (1) ¬(p↔q)∧(¬(q↔r)∧¬(p↔r))   A
 
 
 
 1  (17) p∧¬p                    </code></pre>
+<p>The formula on line 1 is an inconsistency. By completeness, there is
+a proof of <em>any</em> sentence whatsoever depending on just 1.
+Therefore, there is a correctly written proof with these line fragments.
+(Isn’t it amazing that completeness guarantees that there always will be
+a valid proof from any inconsistency to p∧¬p?)</p>
 <hr>
 <p>Can there be a correctly written proof with line fragments like
 this?</p>
-<p>What are the semantic types of the two sentences?</p>
 <pre><code>1  (1) p∨¬p     A
 
 
 1  (17) q       </code></pre>
+<p>No, the sentence on line 1 is a tautology while the sentence on line
+17 is a contingency. So line 1 does not logically imply line 7. By
+soundness, there is no correctly written proof with these line
+fragments.</p>
 <hr>
 <p>Can there be a correctly written proof with line fragments like
 this?</p>
@@ -269,8 +286,11 @@ anything definitive about the semantic type of ϕ→ψ?</p>
 <p>In fact, when ϕ is a tautology, ϕ→ψ is logically equivalent to ψ. So
 it is a contingency if ψ is.</p></li>
 </ol>
+<p><strong>Exercise:</strong> Draw up a table where you check ϕ→ψ for
+each possibility, where ϕ,ψ are tautology, inconsistency, or
+contingency.</p>
 <hr>
-<p>As Jillian pointed out, the following is provable.</p>
+<p>As Jillian pointed out, the following sequent is provable.</p>
 <p><span
 class="math display">(<em>p</em>∧<em>q</em>) → <em>r</em> ⊢ (<em>p</em>→<em>r</em>) ∨ (<em>q</em>→<em>r</em>)</span></p>
 <p>In fact, the meta-rules <strong>cut</strong> and
@@ -299,8 +319,11 @@ sequent, we get the following valid sequent.</p>
 <p><span
 class="math display">(<em>p</em>∧<em>q</em>) → (<em>p</em>∧<em>q</em>) ⊢ (<em>p</em>→(<em>p</em>∧<em>q</em>)) ∨ (<em>q</em>→(<em>p</em>∧<em>q</em>))</span></p>
 <p>Since the premise here is a tautology, it follows that the conclusion
-is also a tautology! But that can also be determined directly: if
+is also a tautology! Think about that: it is guaranteed to be true that
+either p→(p∧q) or q→(p∧q). Does that seem right to you?</p>
+<p>We can also check directly that this sentence is a tautology: if
 p→(p∧q) is false, then p is true and p∧q is false, which means that q is
-false; but then q→(p∧q) is true.</p>
+false; but then q→(p∧q) is true. Since one of the two disjuncts has to
+be true, the disjunction is always true.</p>
 </body>
 </html>
