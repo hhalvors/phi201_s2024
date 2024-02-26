@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Hans Halvorson" />
+  <title>Lecture 5</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Lecture 5</h1>
+<p class="author">Hans Halvorson</p>
+</header>
+<style>
+code {
+  font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+  font-size: 85%;
+  margin: 2px 0;
+  background-color: #f5f5f5; /* Light gray background */
+  border: 1px solid #ccc; /* Light gray border */
+  padding: 8px; /* Padding around the text for better readability */
+  border-radius: 4px; /* Optional: rounded corners */
+  display: block; /* To ensure the background and padding cover the entire line */
+  overflow-x: auto; /* Adds horizontal scrolling if the code overflows */
+  max-width: 90%; /* Set the maximum width to 2/3 of the parent container's width */
+  white-space: pre; /* Preserves whitespace and formatting */
+}
+</style>
+<ol type="1">
+<li><p>Diagnosing proof fragments – using <strong>soundness</strong> and
+<strong>completeness</strong></p></li>
+<li><p>Proofs</p>
+<p>A. Cut</p>
+<p>B. Replace</p></li>
+<li><p>Inferring types of sentences</p></li>
+</ol>
+<h2 id="diagnosing-proof-fragments">Diagnosing proof fragments</h2>
+<p><strong>Soundness</strong> says that if there is a proof of Γ ⊢ ϕ
+then the argument from Γ to ϕ is valid (in the sense of truth
+tables).</p>
+<p><strong>Completeness</strong> says that if the argument from Γ to ϕ
+is valid then there is a proof of Γ ⊢ ϕ.</p>
+<hr>
+<p>Can there be a correctly written proof with line fragments like
+this?</p>
+<p>What is the semantic relationship between the sentences on lines 1,2
+and the sentence on line n?</p>
+<pre><code>1   (1) p∨q       A
+2   (2) p∨¬q      A
+
+
+1,2 (n) p        </code></pre>
+<hr>
+<p>Suppose that we have two (correctly written) proofs as follows. What
+can we say about the semantic relationship between ϕ and ψ ?</p>
+<pre><code>1  (1)  ϕ          A
+
+
+1  (17) ψ</code></pre>
+<p><br></p>
+<pre><code>1  (1)  ψ          A
+
+
+1  (17) ϕ</code></pre>
+<hr>
+<p>Can there be a correctly written proof with line fragments like
+this?</p>
+<p>What is the semantic type of the formula on line 1? What is the
+semantic type of the formula on line 17?</p>
+<pre><code>1  (1) ¬(p↔q)∧(¬(q↔r)∧¬(p↔r))   A
+
+
+
+1  (17) p∧¬p                    </code></pre>
+<hr>
+<p>Can there be a correctly written proof with line fragments like
+this?</p>
+<p>What are the semantic types of the two sentences?</p>
+<pre><code>1  (1) p∨¬p     A
+
+
+1  (17) q       </code></pre>
+<hr>
+<p>Can there be a correctly written proof with line fragments like
+this?</p>
+<pre><code>1  (1) p→(q∨r)          A
+
+
+1  (n) (p→q)∨r</code></pre>
+<p>What about this?</p>
+<pre><code>1  (1) (p→q)∨r          A
+
+
+1  (n) p→(q∨r)</code></pre>
+<h2 id="inferring-types-of-sentences">Inferring types of sentences</h2>
+<ol type="1">
+<li><p>Suppose that ϕ and ψ are contingencies. Can we say anything
+definitive about the semantic type of ϕ∨ψ?</p>
+<p>ϕ∨ψ cannot be an inconsistency, because ϕ is true on at least one
+row, and ϕ∨ψ is true whenever ϕ is true.</p>
+<p>ϕ∨ψ could be a contingency, for example if ϕ is p and ψ is q.</p>
+<p>ϕ∨ψ could be a tautology, for example if ϕ is p and ψ is
+¬p. </p></li>
+<li><p>Suppose that ϕ is a tautology and ψ is a contingency. Can we say
+anything definitive about the semantic type of ϕ→ψ?</p>
+<p>In fact, when ϕ is a tautology, ϕ→ψ is logically equivalent to ψ. So
+it is a contingency if ψ is.</p></li>
+</ol>
+</body>
+</html>
