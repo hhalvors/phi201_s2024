@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Hans Halvorson" />
+  <title>logic midterm review</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">logic midterm review</h1>
+<p class="author">Hans Halvorson</p>
+</header>
+<p>The exam will have four kinds of problems.</p>
+<p>A. Translation</p>
+<p>B. Truth-table</p>
+<p>C. Proofs</p>
+<p>D. Conceptual</p>
+<h2 id="a.-translation">A. Translation</h2>
+<p>You know how to do this, and we aren’t going to try to trip you up.
+But make sure you know about:</p>
+<ul>
+<li><p>Necessary and sufficient conditions. To say that B is a necessary
+condition or A means that A→B. To say that A is a sufficient condition
+for B means that A→B.</p></li>
+<li><p>Unless. To say that A unless B means A∨B or equivalently
+¬B→A.</p></li>
+<li><p>Only if. To say that A only if B means A→B.</p></li>
+<li><p>If and only if. To say that A if and only if B means
+A↔︎B.</p></li>
+<li><p>Neither. To say that neither A nor B means ¬(A∨B) or equivalently
+¬A∧¬B.</p></li>
+</ul>
+<p>Recall also that some English sentences permit more than one
+legitimate symbolization. If you detect ambiguity in the English, your
+best bet is to give both translations, and note how they disambiguate
+the English in different ways.</p>
+<h2 id="b.-truth-table">B. Truth table</h2>
+<ol type="1">
+<li><p>Classify sentences as tautology, inconsistency, or
+contingency.</p></li>
+<li><p>Classify arguments as valid or invalid. Give counterexamples for
+invalid arguments.</p></li>
+<li><p>For pairs of sentences, determine what relation holds between
+them — logical implication, inconsistency, equivalence,
+independence.</p></li>
+</ol>
+<h2 id="c.-proofs">C. Proofs</h2>
+<p>Your answers in the proof section should be self-contained, i.e. cite
+a sequent only if you prove that sequent in your exam booklet. However,
+we scale the difficulty of the proofs in such a way that the easier
+problems might be used in solutions to the more difficult ones. Here is
+an example of what the proof section might look like (4 problems at 4
+points each):</p>
+<ol type="1">
+<li><p>P∨Q ⊢ ¬P→Q</p></li>
+<li><p>¬P→Q ⊢ P∨Q</p></li>
+<li><p>(P→Q)→(¬P→Q) ⊢ ¬P→Q</p></li>
+<li><p>(¬P∨Q)→(P∨Q) ⊢ P∨Q</p></li>
+</ol>
+<p>(Notice that the first two results establish P∨Q ≡ ¬P→Q, and a step
+of replacement with DN also yields ¬P∨Q ≡ P→Q.)</p>
+<h2 id="d.-conceptual">D. Conceptual</h2>
+<p>Example problems include these types:</p>
+<ol type="1">
+<li><p>Figure out whether ϕ∘ψ must be tautology, contingency, or
+inconsistency based on whether ϕ and ψ are one of those three. (Here ∘
+is any one of our binary connectives.) Note that if you say “ϕ∘ψ could
+be an X”, then you must supply a concrete example of sentences ϕ and ψ
+such that ϕ∘ψ is an X. For example: There are two contingencies ϕ and ψ
+such that ϕ∧ψ is a inconsistency, in particular, the contingencies P and
+¬P.</p></li>
+<li><p>Given certain line fragments, determine whether there is a
+correctly written proof with those line fragments. Cite soundness or
+completeness to justify your answer.</p></li>
+</ol>
+</body>
+</html>
