@@ -168,89 +168,21 @@
 <h1 class="title">logic pset8</h1>
 </header>
 <h1 id="a.">A.</h1>
-<p>Represent the form of the following sentences in predicate logic.
-We’ve suggested appropriate symbols. (For the sentences about people,
-you don’t need to add an extra predicate for “<span
-class="math inline"><em>x</em></span> is a person.”)</p>
+<p>Prove the following sequents using the propositional logic rules plus
+UE, UI, and EI.</p>
 <ol type="1">
-<li><p>Mary loves everyone who loves her. (<span
-class="math inline"><em>m</em>, <em>L</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Everyone loves their mother. (<span
-class="math inline"><em>L</em><em>x</em><em>y</em>, <em>M</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Snape killed someone. (<span
-class="math inline"><em>K</em><em>x</em><em>y</em>, <em>s</em></span>)</p></li>
-<li><p>Some wizards only marry other wizards. (<span
-class="math inline"><em>W</em><em>x</em>, <em>M</em><em>x</em><em>y</em></span>)</p></li>
-<li><p>Anything that is greater or equal than both <span
-class="math inline"><em>a</em></span> and <span
-class="math inline"><em>b</em></span> is also greater or equal than
-<span class="math inline"><em>c</em></span>. (<span
-class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>x</em> ≤ <em>y</em></span>)</p></li>
+<li><p>¬∃x(Fx∧Gx) ⊢ ∀x(Fx→¬Gx)</p></li>
+<li><p>¬∃x(Fx→P) ⊢ ∀xFx</p></li>
+<li><p>∀xFx→P ⊢ ∃x(Fx→P)</p></li>
 </ol>
 <h1 id="b.">B.</h1>
-<p>Prove the following sequents using the propositional logic rules,
-plus UE and UI.</p>
+<p>Prove the following sequents using the propositional logic rules plus
+UE, UI, EI, and EE.</p>
 <ol type="1">
-<li><p><span
-class="math inline">∀<em>y</em>(<em>P</em>→<em>F</em><em>y</em>) ⊢ <em>P</em> → ∀<em>y</em><em>F</em><em>y</em></span></p></li>
-<li><p><span
-class="math inline">∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>G</em><em>y</em>) ⊢ ∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>)</span></p></li>
-<li><p><span
-class="math inline">∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>G</em><em>y</em>) ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>G</em><em>y</em>)</span></p></li>
-<li><p><span
-class="math inline">⊢ ∀<em>x</em>(∀<em>y</em><em>R</em><em>x</em><em>y</em>→<em>R</em><em>x</em><em>x</em>)</span></p></li>
+<li><p>∃x(Fx→Gx) ⊢ ∀xFx→∃xGx</p></li>
+<li><p>∀x∃y(Fy→Gx) ⊢ ∀yFy→∀xGx</p></li>
+<li><p>∃x(Fx∨Gx),¬∃xFx ⊢ ∃yGy</p></li>
+<li><p>P→∃xFx ⊢ ∃x(P→Fx)</p></li>
 </ol>
-<h1 id="c.">C.</h1>
-<p>Prove the following sequents using the propositional logic rules,
-plus EI, UE, and UI.</p>
-<ol type="1">
-<li><p><span
-class="math inline">¬∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>) ⊢ ∀<em>x</em><em>F</em><em>x</em></span></p></li>
-<li><p><span
-class="math inline">¬∀<em>x</em><em>F</em><em>x</em> ⊢ ∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span>
-(Hint: <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span> does
-<em>not</em> follow from the premise.)<a href="#fn1"
-class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a></p></li>
-<li><p><span
-class="math inline">∀<em>x</em>∀<em>y</em>(<em>F</em><em>x</em>→<em>F</em><em>y</em>) ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→∀<em>y</em><em>F</em><em>y</em>)</span></p></li>
-<li><p><span
-class="math inline">¬∃<em>x</em><em>F</em><em>x</em> ⊢ ∀<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span></p></li>
-<li><p><span
-class="math inline">∀<em>x</em><em>F</em><em>x</em> → <em>P</em> ⊢ ∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span>
-(Hint: <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span> does
-<em>not</em> follow from the premise. Reason instead as follows: if
-everything if <span class="math inline"><em>F</em></span>, then <span
-class="math inline"><em>P</em></span>. So either everything is <span
-class="math inline"><em>F</em></span>, and hence <span
-class="math inline"><em>P</em></span>, or some thing <span
-class="math inline"><em>a</em></span> is not <span
-class="math inline"><em>F</em></span>. But if <span
-class="math inline">¬<em>F</em><em>a</em></span> then <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span>, and in
-that case <span
-class="math inline">∃<em>x</em>(<em>F</em><em>x</em>→<em>P</em>)</span>.)</p></li>
-</ol>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p><span
-class="math inline">¬∀<em>x</em><em>F</em><em>x</em></span> says that
-not everything is <span class="math inline"><em>F</em></span>. In other
-words, there is something that is not <span
-class="math inline"><em>F</em></span>, and that thing, call it <span
-class="math inline"><em>b</em></span>, has the feature that <span
-class="math inline"><em>F</em><em>b</em> → <em>P</em></span>. However,
-it is not necessarily true that an arbitrary thing <span
-class="math inline"><em>a</em></span> has the feature that <span
-class="math inline"><em>F</em><em>a</em> → <em>P</em></span>. In pset11,
-we will see how these intuitions can be turned into a rigorous proof of
-non-provability.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 </body>
 </html>
